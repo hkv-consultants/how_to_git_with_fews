@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews https://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>TMXCSV</importType>
+			<folder>$IMPORT_FOLDER$/Keller_TMX_CSV</folder>
+			<fileNamePatternFilter>*.csv</fileNamePatternFilter>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/Keller_TMX_CSV</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/Keller_TMX_CSV</backupFolder>
+			<idMapId>IdTmxCsv</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+01:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>TMX Keller (xml-bestanden)</dataFeedId>
+			<reportChangedValues>true</reportChangedValues>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportKeller</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Stijghoogte</parameterId>
+			<locationSetId>grondwater_TWIN</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

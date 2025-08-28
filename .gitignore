@@ -1,0 +1,26 @@
+/*.spp
+__pycache__
+hidden_*
+
+/FEWS/Modules/
+
+# overige
+/FEWS/localDataStore
+/FEWS/temp/*
+/FEWS/Map_Cache/*
+/FEWS/temp/cache/!*.dbz
+/FEWS/*.lnk
+/FEWS/*clientConfig.xml
+/FEWS/*.jar
+/FEWS/exportedModuleDataSetFiles.txt
+/FEWS/log*.*
+/FEWS/running
+/FEWS/*.ini
+/FEWS/*.properties
+/FEWS/Config/ModuleDataSetFiles/Python.zip
+/FEWS/Dumpfiles
+/FEWS/windowLayout.xml
+/FEWS/*.jpg
+
+.github
+.vscode
