@@ -10,9 +10,10 @@ license-file = "LICENSE"
 
 [tasks]
 # Docs
-quarto-preview = { cmd = "export QUARTO_PYTHON=python && quarto preview _quarto.yml --to html"}
-quarto-check = { cmd = "quarto check all"}
-quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render _quarto.yml --to html --execute"}
+quarto-preview = { cmd = "export QUARTO_PYTHON=python && quarto preview",depends-on = ["copy-readme-to-docs"]}
+copy-readme-to-docs = { cmd = "python copy.py" }
+quarto-check = { cmd = "quarto check all", depends-on = ["copy-readme-to-docs"]}
+quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render --to html --execute", depends-on = ["copy-readme-to-docs"]}
 docs = { depends-on = ["quarto-preview"] }
 
 [dependencies]

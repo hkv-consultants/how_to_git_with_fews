@@ -7,7 +7,7 @@ website:
   navbar:
     left:
       - text: "How to Git with FEWS"
-        file: ..\README.md
+        file: index.qmd
     right:
       - icon: github
         href: https://github.com/hkv-consultants/how_to_git_with_fews
