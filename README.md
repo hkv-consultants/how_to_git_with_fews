@@ -110,8 +110,13 @@ Het beste leer je door er gewoon mee te werken.
 Gebruik deze repository om te oefenen, maar een `fork` en ga in je eigen versie van deze repository aan de slag.
 Er is een `FEWS` map, deze volgt ongeveer de structuur zoals we het binnen FEWS project en gebruiken.
 Maak een bekijk de verschillende branches, oefen met de commando's en probeer een paar wijzigingen door te voeren vanuit `ontwikkel_<naam>` naar `ontwikkel` en uiteindelijk naar `test` en `main`.
+Let op, `main` en `test` zijn niet helemaal gelijk.  
+
 Je kan de map `docs` en `.github` negeren, hier staat alleen wat python magie die hier een mooie pagina van maakt.
+Ook de branch gh-pages kan je negeren, deze wordt automatisch aangemaakt door GitHub om de website te publiceren.
 
-Heb je nog vragen? Schroom niet om ze te stellen!
+Heb je nog vragen? Schroom niet om ze te stellen aan `verkaik@hkv.nl` of `haasnoot@hkv.nl`.
 
-For questions about how to use this package contact `verkaik@hkv.nl` or `haasnoot@hkv.nl`.
+### Licentie
+
+Deze repository is gelicenseerd onder de [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/).
