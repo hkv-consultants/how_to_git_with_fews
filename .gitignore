@@ -1,6 +1,6 @@
 /*.spp
 __pycache__
-hidden_*
+.vscode
 
 /FEWS/Modules/
 
@@ -17,9 +17,7 @@ hidden_*
 /FEWS/running
 /FEWS/*.ini
 /FEWS/*.properties
-/FEWS/Config/ModuleDataSetFiles/Python.zip
 /FEWS/Dumpfiles
 /FEWS/windowLayout.xml
 /FEWS/*.jpg
 
-.vscode
