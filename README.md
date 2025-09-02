@@ -109,6 +109,6 @@ Het beste leer je door er gewoon mee te werken.
 Gebruik deze repository om te oefenen.
 Er is een `FEWS` map, deze volgt ongeveer de structuur zoals we het binnen FEWS project en gebruiken.
 Maak een bekijk de verschillende branches, oefen met de commando's en probeer een paar wijzigingen door te voeren vanuit `ontwikkel_<naam>` naar `ontwikkel` en uiteindelijk naar `test` en `main`.
-Je kan de map `docs` en `.github` negeren, hier staat alleen de python code die hier een mooie pagina van maakt.
+Je kan de map `docs` en `.github` negeren, hier staat alleen wat python magie die hier een mooie pagina van maakt.
 
 Heb je nog vragen? Schroom niet om ze te stellen!

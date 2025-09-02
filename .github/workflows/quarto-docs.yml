@@ -32,11 +32,11 @@ jobs:
           pixi-version: "latest"
 
       - name: Check Quarto installation and all engines
-        working-directory: how_to_git_with_fews
+        working-directory: how_to_git_with_fews/docs
         run: pixi run quarto-check
 
       - name: Render Quarto Project
-        working-directory: how_to_git_with_fews
+        working-directory: how_to_git_with_fews/docs
         run: pixi run quarto-render
 
       - name: Publish Quarto Project
