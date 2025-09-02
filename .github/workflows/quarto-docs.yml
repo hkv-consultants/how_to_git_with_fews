@@ -1,0 +1,49 @@
+---
+name: Render and Publish Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# You need these permissions to publish to GitHub pages
+permissions:
+    contents: write
+    pages: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          path: how_to_git_with_fews
+
+      - uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+          manifest-path: how_to_git_with_fews/docs/pixi.toml
+          pixi-version: "latest"
+
+      - name: Check Quarto installation and all engines
+        working-directory: how_to_git_with_fews
+        run: pixi run quarto-check
+
+      - name: Render Quarto Project
+        working-directory: how_to_git_with_fews
+        run: pixi run quarto-render
+
+      - name: Publish Quarto Project
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: how_to_git_with_fews/docs/_site
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

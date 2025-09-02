@@ -1,0 +1,26 @@
+[project]
+name = "how_to_git_with_fews"
+version = "0.0.1"
+description = "How to git with FEWS"
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64"]
+readme = "../README.md"
+license = "GPL-3.0"
+license-file = "LICENSE"
+
+[tasks]
+# Docs
+quarto-preview = { cmd = "export QUARTO_PYTHON=python && quarto preview _quarto.yml --to html"}
+quarto-check = { cmd = "quarto check all"}
+quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render _quarto.yml --to html --execute"}
+docs = { depends-on = ["quarto-preview"] }
+
+[dependencies]
+python = ">=3.11"
+ipykernel ="*"
+ipywidgets ="*"
+matplotlib ="*"
+nbclient ="*"
+nbformat ="*"
+quarto = ">=1.5.57"
+quartodoc = ">=0.9.1"

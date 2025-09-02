@@ -43,7 +43,7 @@ Specifiek voor FEWS zorgt het er ook voor dat je snel aanpassingen kan doorvoere
 
 ## Basis stappen plan
 
-Hier is een basis stappenplan beschreven. Je kan met veschillende tools werken, maar de stappen blijven hetzelfde. We gaan er hier vanuit dat je de command line gebruikt, maar de knoppen heten het zelfde in bijvoorbeeld [Tortoise Git](https://tortoisegit.org/).
+Hier is een basis stappenplan beschreven. Je kan met verschillende tools werken, maar de stappen blijven hetzelfde. We gaan er hier vanuit dat je de command line gebruikt, maar de knoppen heten vaak hetzelfde in gui's zoals bijvoorbeeld [Tortoise Git](https://tortoisegit.org/).
 
 ### Niet altijd
 
@@ -56,7 +56,7 @@ Dit zijn stappen die je niet altijd hoeft te doen:
 
 Voor elke toevoeging is het volgende nodig:
 
-1. `git pull`: Haal de laatste wijzigingen op van de remote repository.
+1. `git pull`: Haal de laatste wijzigingen op van de remote repository. Ook wel bekend als `sync` in gui's.
 1. `git add <filename>`: selecteer de bestanden om klaar te zetten. In sommige gevallen heb je wijzigingen gedaan maar wil je deze niet mee nemen.
 1. `git commit -m '<message>'`: Maak een momentopname van de geselecteerde bestanden met een korte omschrijving van wat je hebt aangepast.
 1. `git push`: Stuur de wijzigingen naar de remote repository.
@@ -79,7 +79,12 @@ Het samenvoegen van branches kan via de `.bat` scripts die hier te vinden zijn. 
 >git pull
 >```
 
-- Indien je een verschil wilt: `git diff %BRANCH_TO%..%BRANCH_FROM%`. Hierbij wordt per regel getoond wat anders is.
+- De verschillen worden per regel getoond.
+
+>```git
+>git diff %BRANCH_TO%..%BRANCH_FROM%
+>```
+
 - Vervolgens wordt er een merge gedaan in een tijdelijk branch.
 
 >```git
@@ -97,3 +102,13 @@ Het samenvoegen van branches kan via de `.bat` scripts die hier te vinden zijn. 
 >```
 
 </details>
+
+## Aan de slag
+
+Het beste leer je door er gewoon mee te werken.
+Gebruik deze repository om te oefenen.
+Er is een `FEWS` map, deze volgt ongeveer de structuur zoals we het binnen FEWS project en gebruiken.
+Maak een bekijk de verschillende branches, oefen met de commando's en probeer een paar wijzigingen door te voeren vanuit `ontwikkel_<naam>` naar `ontwikkel` en uiteindelijk naar `test` en `main`.
+Je kan de map `docs` en `.github` negeren, hier staat alleen de python code die hier een mooie pagina van maakt.
+
+Heb je nog vragen? Schroom niet om ze te stellen!
