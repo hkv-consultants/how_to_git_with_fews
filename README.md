@@ -40,6 +40,7 @@ Specifiek voor FEWS zorgt het er ook voor dat je snel aanpassingen kan doorvoere
 - `branch`: Een 'Onafhankelijke ontwikkellijn', vaak noemen we de hoofdontwikkellijn ~~master~~ main. Wij kennen: `main`, `test`, `ontwikkel`, `ontwikkel_<naam>` en soms ook `ontwikkel_<naam>_<feature>`. Dit is ook de volgorde van samenvoegen. In `main` zitten de wijzigingen die draaien in productie omgeving, in `test` die draaien op de test omgeving. In `ontwikkel` staat alles wat klaar is om naar `test` te gaan, maar je voor wat voor reden nog niet heb doorgezet. `Ontwikkel_<naam>` is een persoonlijke ontwikkelomgeving waar je aanpassingen kan maken zonder dat dit direct invloed heeft op anderen. Alles met `Ontwikkel_<naam>_..` is ook persoonlijk, vaak voor een specifieke aanpassing.
 - `commit`: Momentopname van het project, krijgt een unieke identificatie (bijv. c7f0e8bfc718be04525847fc7ac237f470add76e).
 - `cloning`: Het kopiëren van de hele repository naar je laptop - de eerste keer. Het is niet nodig om elk bestand één voor één te downloaden.
+- `forking`: Het maken van een kopie van een repository (die meestal niet van jou is) - jouw kopie (fork) blijft op GitHub en je kunt wijzigingen aanbrengen in jouw kopie, zonder dat dit invloed heeft op de originele repository. Vervolgens kan je er voor kiezen om het alsnog terug te sturen naar de originele repository (pull request).
 
 ## Basis stappen plan
 
@@ -106,7 +107,7 @@ Optioneel: korte uitleg van de stappen die worden uitgevoerd in de scripts.
 ## Aan de slag
 
 Het beste leer je door er gewoon mee te werken.
-Gebruik deze repository om te oefenen.
+Gebruik deze repository om te oefenen, maar een `fork` en ga in je eigen versie van deze repository aan de slag.
 Er is een `FEWS` map, deze volgt ongeveer de structuur zoals we het binnen FEWS project en gebruiken.
 Maak een bekijk de verschillende branches, oefen met de commando's en probeer een paar wijzigingen door te voeren vanuit `ontwikkel_<naam>` naar `ontwikkel` en uiteindelijk naar `test` en `main`.
 Je kan de map `docs` en `.github` negeren, hier staat alleen wat python magie die hier een mooie pagina van maakt.
