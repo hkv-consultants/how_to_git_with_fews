@@ -19,7 +19,7 @@ Allereerst: waarom zou je git gebruiken? In het algemeen is het een hele nuttig 
 - Te herleiden waar fouten in het verleden ontstaan, en snel te zien door wie en waarom iets is aangepast.
 - Samenwerken te werken met anderen, zonder dat je elkaars werk overschrijft of per ongeluk verwijdert.
 
-Specifiek voor FEWS zorgt het er ook voor dat je snel aanpassingen kan doorvoeren waar nodig zonder dat je bang hoeft te zijn dat je iets kapot maakt. FEWS heeft dit al deels ingebouwd met de Config Manager (CM), maar in een team is dit niet altijd even handig. Door de laatste wijzigingen in Git te hebben staan, kan je altijd werken met de juiste versie. 
+Specifiek voor FEWS zorgt het er ook voor dat je snel aanpassingen kan doorvoeren waar nodig zonder dat je bang hoeft te zijn dat je iets kapot maakt. FEWS heeft dit al deels ingebouwd met de Config Manager (CM), maar in een team is dit niet altijd even handig. Door de laatste wijzigingen in Git te hebben staan, kan je altijd werken met de juiste versie.
 
 ## Wat is `Git`, `GitHub` en `DevOps`?
 
@@ -67,7 +67,7 @@ Het samenvoegen van branches kan via de `.bat` scripts die hier te vinden zijn. 
 
 <details>
 <summary>
-<b>Optioneel</b>: korte uitleg van de stappen die worden uitgevoerd in de scripts.
+Optioneel: korte uitleg van de stappen die worden uitgevoerd in de scripts.
 </summary>
 
 - Beide branches worden opgehaald:
@@ -112,3 +112,5 @@ Maak een bekijk de verschillende branches, oefen met de commando's en probeer ee
 Je kan de map `docs` en `.github` negeren, hier staat alleen wat python magie die hier een mooie pagina van maakt.
 
 Heb je nog vragen? Schroom niet om ze te stellen!
+
+For questions about how to use this package contact `verkaik@hkv.nl` or `haasnoot@hkv.nl`.

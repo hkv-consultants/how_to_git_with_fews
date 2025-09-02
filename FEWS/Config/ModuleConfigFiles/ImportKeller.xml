@@ -1,72 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews https://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
-	<!--import>
-
-	deze import was er eenmalig om historie nogmaals te importen na explosie van database
-
-		<general>
-			<importType>pi</importType>
-			<folder>$IMPORT_FOLDER$/Keller</folder>
-			<fileNamePatternFilter>20120514_0700_*.xml</fileNamePatternFilter>
-			<failedFolder>$IMPORT_FAILED_FOLDER$/Keller</failedFolder>
-			<backupFolder>$IMPORT_BACKUP_FOLDER$/Keller</backupFolder>
-			<dataFeedId>temp bewerk_grondwater</dataFeedId>
-		</general>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Referentie.hoogte</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>H.verschil.handm</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Inhang.diepte</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>KNMI.P2</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Stijghoogte</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-		<timeSeriesSet>
-			<moduleInstanceId>Bewerk_Grondwater</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>Stijghoogte.handmeting</parameterId>
-			<locationSetId>grondwater</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="nonequidistant"/>
-			<readWriteMode>add originals</readWriteMode>
-		</timeSeriesSet>
-	</import-->
 	<import>
 		<general>
 			<importType>generalCSV</importType>
@@ -75,9 +8,6 @@
 			<failedFolder>$IMPORT_FAILED_FOLDER$/Keller</failedFolder>
 			<backupFolder>$IMPORT_BACKUP_FOLDER$/Keller</backupFolder>
 			<table>
-				<!--"locatie","tijdstip","waarde","commentaar"
-	  		"B45C0949","20070101 12:00","-999.00",
-		-->
 				<dateTimeColumn name="tijdstip" pattern="yyyyMMdd HH:mm"/>
 				<locationColumn name="locatie"/>
 				<valueColumn name="waarde" unit="SI"/>
@@ -86,7 +16,6 @@
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-999.00</missingValue>
 			<importTimeZone>
-				<!--				<timeZoneName>MET</timeZoneName>-->
 				<timeZoneOffset>+01:00</timeZoneOffset>
 			</importTimeZone>
 			<dataFeedId>Ultimo handmetingen</dataFeedId>
@@ -110,7 +39,6 @@
 			<fileNamePatternFilter>*_BAK.IDC</fileNamePatternFilter>
 			<failedFolder>$IMPORT_FAILED_FOLDER$/Keller</failedFolder>
 			<backupFolder>$IMPORT_BACKUP_FOLDER$/Keller</backupFolder>
-			<!--failOnUnmappableTimeSeries>true</failOnUnmappableTimeSeries-->
 			<idMapId>IdKeller</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<importTimeZone>
