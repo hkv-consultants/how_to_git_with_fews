@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>How to Git with FEWS</title>
+<title>deploy-keys – How to Git with FEWS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -89,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">How to Git with FEWS</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./deploy-keys.html"> 
+    <a class="nav-link active" href="./deploy-keys.html" aria-current="page"> 
 <span class="menu-text">Deploy keys</span></a>
   </li>  
 </ul>
@@ -119,25 +154,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-git" id="toc-how-to-git" class="nav-link active" data-scroll-target="#how-to-git">How to Git</a>
+  <li><a href="#deploy-keys" id="toc-deploy-keys" class="nav-link active" data-scroll-target="#deploy-keys">Deploy keys</a>
   <ul class="collapse">
-  <li><a href="#bronnen" id="toc-bronnen" class="nav-link" data-scroll-target="#bronnen">Bronnen</a></li>
-  <li><a href="#waarom" id="toc-waarom" class="nav-link" data-scroll-target="#waarom">Waarom?</a></li>
-  <li><a href="#wat-is-git-github-en-devops" id="toc-wat-is-git-github-en-devops" class="nav-link" data-scroll-target="#wat-is-git-github-en-devops">Wat is <code>Git</code>, <code>GitHub</code> en <code>DevOps</code>?</a>
-  <ul class="collapse">
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#github-en-devops" id="toc-github-en-devops" class="nav-link" data-scroll-target="#github-en-devops"><code>GitHub</code> en <code>DevOps</code></a></li>
-  </ul></li>
-  <li><a href="#repositories-branches-commits-clones" id="toc-repositories-branches-commits-clones" class="nav-link" data-scroll-target="#repositories-branches-commits-clones">Repositories, branches, Commits , clones</a></li>
-  <li><a href="#basis-stappen-plan" id="toc-basis-stappen-plan" class="nav-link" data-scroll-target="#basis-stappen-plan">Basis stappen plan</a>
-  <ul class="collapse">
-  <li><a href="#niet-altijd" id="toc-niet-altijd" class="nav-link" data-scroll-target="#niet-altijd">Niet altijd</a></li>
-  </ul></li>
-  <li><a href="#altijd" id="toc-altijd" class="nav-link" data-scroll-target="#altijd">Altijd</a>
-  <ul class="collapse">
-  <li><a href="#samenvoegen-van-branches" id="toc-samenvoegen-van-branches" class="nav-link" data-scroll-target="#samenvoegen-van-branches">Samenvoegen van branches</a></li>
-  </ul></li>
-  <li><a href="#aan-de-slag" id="toc-aan-de-slag" class="nav-link" data-scroll-target="#aan-de-slag">Aan de slag</a></li>
+  <li><a href="#op-de-machine" id="toc-op-de-machine" class="nav-link" data-scroll-target="#op-de-machine">Op de machine</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -148,122 +167,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="how-to-git" class="level1">
-<h1>How to Git</h1>
-<p>Deze repository bevat een beginners handleiding over het gebruik van Git, een versiebeheersysteem. Het is vooral gericht op hoe je Git kunt gebruiken in combinatie met FEWS projecten, al zijn de commando’s en manier van werken generiek toepasbaar Deze handleiding is veelal gebaseerd op onze ervaringen maar ook vooral externe bronnen die nuttig zijn om meer te leren buiten wat hier beschreven staat.</p>
-<section id="bronnen" class="level2">
-<h2 class="anchored" data-anchor-id="bronnen">Bronnen</h2>
-<p>Het <a href="https://www.esciencecenter.nl/training-materials/">NL eScience Center</a> heeft verschillende trainingen. Deze variëren van beginner tot gevorderd en zijn ook breder dan alleen git. Twee bronnen die zijn gebruiken <a href="https://carpentries-incubator.github.io/collaborative-git-and-github-lesson/index.html">Carpentries incubator</a>, die gebaseerd is op de <a href="https://coderefinery.github.io/github-without-command-line/basics/">Coderefinery</a> les. Veel van de uitleg heb ik over genomen, vertaald en aangepast naar onze situatie. Hierbij heb ik soms expres details weggelaten om het compacter te houden.</p>
-<p>Neem deze vooral een keer door of gebruik ze om te zoeken naar antwoorden op specifieke vragen. Er staan ook veel voorbeelden en nuttig tips in.</p>
-</section>
-<section id="waarom" class="level2">
-<h2 class="anchored" data-anchor-id="waarom">Waarom?</h2>
-<p>Allereerst: waarom zou je git gebruiken? In het algemeen is het een hele nuttig tool om:</p>
-<ul>
-<li>Terug te kunnen bij fouten.</li>
-<li>Makkelijk nieuwe functionaliteiten te kunnen ontwikkelen, zonder dat het veel moeite kost om terug dit ongedaan te maken.</li>
-<li>Te herleiden waar fouten in het verleden ontstaan, en snel te zien door wie en waarom iets is aangepast.</li>
-<li>Samenwerken te werken met anderen, zonder dat je elkaars werk overschrijft of per ongeluk verwijdert.</li>
-</ul>
-<p>Specifiek voor FEWS zorgt het er ook voor dat je snel aanpassingen kan doorvoeren waar nodig zonder dat je bang hoeft te zijn dat je iets kapot maakt. FEWS heeft dit al deels ingebouwd met de Config Manager (CM), maar in een team is dit niet altijd even handig. Door de laatste wijzigingen in Git te hebben staan, kan je altijd werken met de juiste versie.</p>
-</section>
-<section id="wat-is-git-github-en-devops" class="level2">
-<h2 class="anchored" data-anchor-id="wat-is-git-github-en-devops">Wat is <code>Git</code>, <code>GitHub</code> en <code>DevOps</code>?</h2>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
-<ul>
-<li>Een tool die snapshots (of moment opnamen) kan vastleggen en synchroniseren.</li>
-<li>Het is niet de enige tool die snapshots kan vastleggen (andere populaire tools zijn Subversion en Mercurial).</li>
-<li>Git is niet alleen een tool, maar ook een formaat dat door veel verschillende tools gelezen kan worden.</li>
-</ul>
-</section>
-<section id="github-en-devops" class="level3">
-<h3 class="anchored" data-anchor-id="github-en-devops"><code>GitHub</code> en <code>DevOps</code></h3>
-<ul>
-<li>Een dienst die hosting biedt voor Git repositories met een gebruiksvriendelijke webinterface.</li>
-<li>Het is niet de enige dienst die dit biedt, andere populaire diensten zijn GitLab en Bitbucket. Binnen waterschappen wordt vaak DevOps gebruikt.</li>
-</ul>
-</section>
-</section>
-<section id="repositories-branches-commits-clones" class="level2">
-<h2 class="anchored" data-anchor-id="repositories-branches-commits-clones">Repositories, branches, Commits , clones</h2>
-<ul>
-<li><code>repository</code>: Het project, bevat alle data en geschiedenis (commits, branches, tags). In ons geval is dit er maar eentje met het FEWS project. Voor een WIS zou je wel een andere repository gebruiken dan voor het BOS.</li>
-<li><code>branch</code>: Een ‘Onafhankelijke ontwikkellijn’, vaak noemen we de hoofdontwikkellijn <del>master</del> main. Wij kennen: <code>main</code>, <code>test</code>, <code>ontwikkel</code>, <code>ontwikkel_&lt;naam&gt;</code> en soms ook <code>ontwikkel_&lt;naam&gt;_&lt;feature&gt;</code>. Dit is ook de volgorde van samenvoegen. In <code>main</code> zitten de wijzigingen die draaien in productie omgeving, in <code>test</code> die draaien op de test omgeving. In <code>ontwikkel</code> staat alles wat klaar is om naar <code>test</code> te gaan, maar je voor wat voor reden nog niet heb doorgezet. <code>Ontwikkel_&lt;naam&gt;</code> is een persoonlijke ontwikkelomgeving waar je aanpassingen kan maken zonder dat dit direct invloed heeft op anderen. Alles met <code>Ontwikkel_&lt;naam&gt;_..</code> is ook persoonlijk, vaak voor een specifieke aanpassing.</li>
-<li><code>commit</code>: Momentopname van het project, krijgt een unieke identificatie (bijv. c7f0e8bfc718be04525847fc7ac237f470add76e).</li>
-<li><code>cloning</code>: Het kopiëren van de hele repository naar je laptop - de eerste keer. Het is niet nodig om elk bestand één voor één te downloaden.</li>
-<li><code>forking</code>: Het maken van een kopie van een repository (die meestal niet van jou is) - jouw kopie (fork) blijft op GitHub en je kunt wijzigingen aanbrengen in jouw kopie, zonder dat dit invloed heeft op de originele repository. Vervolgens kan je er voor kiezen om het alsnog terug te sturen naar de originele repository (pull request).</li>
-</ul>
-</section>
-<section id="basis-stappen-plan" class="level2">
-<h2 class="anchored" data-anchor-id="basis-stappen-plan">Basis stappen plan</h2>
-<p>Hier is een basis stappenplan beschreven. Je kan met verschillende tools werken, maar de stappen blijven hetzelfde. We gaan er hier vanuit dat je de command line gebruikt, maar de knoppen heten vaak hetzelfde in gui’s zoals bijvoorbeeld <a href="https://tortoisegit.org/">Tortoise Git</a>.</p>
-<section id="niet-altijd" class="level3">
-<h3 class="anchored" data-anchor-id="niet-altijd">Niet altijd</h3>
-<p>Dit zijn stappen die je niet altijd hoeft te doen:</p>
-<blockquote class="blockquote">
-<ol type="1">
-<li><code>git clone &lt;url&gt;</code>: Kopieer de repository naar je laptop (alleen de eerste keer).</li>
-<li><code>git checkout &lt;branch&gt;</code>: Ga naar de juiste branch (bijv. <code>ontwikkel_&lt;naam&gt;</code>). (of <code>git switch &lt;branch&gt;</code>), afhankelijk van hoe je het opzet is dit niet altijd nodig.</li>
-</ol>
-</blockquote>
-</section>
-</section>
-<section id="altijd" class="level2">
-<h2 class="anchored" data-anchor-id="altijd">Altijd</h2>
-<p>Voor elke toevoeging is het volgende nodig:</p>
-<ol type="1">
-<li><code>git pull</code>: Haal de laatste wijzigingen op van de remote repository. Ook wel bekend als <code>sync</code> in gui’s.</li>
-<li><code>git add &lt;filename&gt;</code>: selecteer de bestanden om klaar te zetten. In sommige gevallen heb je wijzigingen gedaan maar wil je deze niet mee nemen.</li>
-<li><code>git commit -m '&lt;message&gt;'</code>: Maak een momentopname van de geselecteerde bestanden met een korte omschrijving van wat je hebt aangepast.</li>
-<li><code>git push</code>: Stuur de wijzigingen naar de remote repository.</li>
-</ol>
-<section id="samenvoegen-van-branches" class="level3">
-<h3 class="anchored" data-anchor-id="samenvoegen-van-branches">Samenvoegen van branches</h3>
-<p>Het samenvoegen van branches kan via de <code>.bat</code> scripts die hier te vinden zijn. Zo hoef je de commando’s niet allemaal zelf in te typen.</p>
-<details>
-<summary>
-Optioneel: korte uitleg van de stappen die worden uitgevoerd in de scripts.
-</summary>
-<ul>
-<li>Beide branches worden opgehaald:</li>
-</ul>
-<blockquote class="blockquote">
-<pre class="git"><code>git checkout %BRANCH_FROM%
-git pull
-git checkout %BRANCH_TO%
-git pull</code></pre>
-</blockquote>
-<ul>
-<li>De verschillen worden per regel getoond.</li>
-</ul>
-<blockquote class="blockquote">
-<pre class="git"><code>git diff %BRANCH_TO%..%BRANCH_FROM%</code></pre>
-</blockquote>
-<ul>
-<li>Vervolgens wordt er een merge gedaan in een tijdelijk branch.</li>
-</ul>
-<blockquote class="blockquote">
-<pre class="git"><code>git checkout -b %BRANCH_TO%_temp %BRANCH_TO%
-git merge %BRANCH_FROM%
-git checkout %BRANCH_TO%
-git branch -D %BRANCH_TO%_temp</code></pre>
-</blockquote>
-<ul>
-<li>Als laatste worden de wijzigingen definitief doorgezet:</li>
-</ul>
-<blockquote class="blockquote">
-<pre class="git"><code>git merge %BRANCH_FROM%
-git push</code></pre>
-</blockquote>
-</details>
-</section>
-</section>
-<section id="aan-de-slag" class="level2">
-<h2 class="anchored" data-anchor-id="aan-de-slag">Aan de slag</h2>
-<p>Het beste leer je door er gewoon mee te werken. Gebruik deze repository om te oefenen, maar een <code>fork</code> en ga in je eigen versie van deze repository aan de slag. Er is een <code>FEWS</code> map, deze volgt ongeveer de structuur zoals we het binnen FEWS project en gebruiken. Maak een bekijk de verschillende branches, oefen met de commando’s en probeer een paar wijzigingen door te voeren vanuit <code>ontwikkel_&lt;naam&gt;</code> naar <code>ontwikkel</code> en uiteindelijk naar <code>test</code> en <code>main</code>. Je kan de map <code>docs</code> en <code>.github</code> negeren, hier staat alleen wat python magie die hier een mooie pagina van maakt.</p>
-<p>Heb je nog vragen? Schroom niet om ze te stellen!</p>
-<p>For questions about how to use this package contact <code>verkaik@hkv.nl</code> or <code>haasnoot@hkv.nl</code>.</p>
+<section id="deploy-keys" class="level1">
+<h1>Deploy keys</h1>
+<p>Om veilig een repository op een machine neer te zetten zonder meteen volledige toegang te geven tot al je GitHub projecten kan je gebruik maken van een deploy key.</p>
+<section id="op-de-machine" class="level2">
+<h2 class="anchored" data-anchor-id="op-de-machine">Op de machine</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deze maakt standaard een key aan in het bestand: <code>C:\Users\{user}\.ssh\id_ed25519.pub</code></p>
+<p>Kopieer deze key publieke key (.pub).</p>
+<p>Ga op GitHub naar de repo die je wilt clonen.</p>
+<p>Onder het tab settings, staat in de linker balk ‘deploy keys’</p>
+<p>Vul daar je key in die je hebt aangemaakt.</p>
+<p>Je hebt nu alleen toegang tot de ene repository. In de meeste gevallen wil je read + write access, maar dit hant af van je proces.</p>
 
 
 </section>

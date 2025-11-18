@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "deploy-keys.html",
+    "href": "deploy-keys.html",
+    "title": "Deploy keys",
+    "section": "",
+    "text": "Om veilig een repository op een machine neer te zetten zonder meteen volledige toegang te geven tot al je GitHub projecten kan je gebruik maken van een deploy key.\n\n\nssh-keygen -t ed25519\nDeze maakt standaard een key aan in het bestand: C:\\Users\\{user}\\.ssh\\id_ed25519.pub\nKopieer deze key publieke key (.pub).\nGa op GitHub naar de repo die je wilt clonen.\nOnder het tab settings, staat in de linker balk ‘deploy keys’\nVul daar je key in die je hebt aangemaakt.\nJe hebt nu alleen toegang tot de ene repository. In de meeste gevallen wil je read + write access, maar dit hant af van je proces."
+  },
+  {
+    "objectID": "deploy-keys.html#op-de-machine",
+    "href": "deploy-keys.html#op-de-machine",
+    "title": "Deploy keys",
+    "section": "",
+    "text": "ssh-keygen -t ed25519\nDeze maakt standaard een key aan in het bestand: C:\\Users\\{user}\\.ssh\\id_ed25519.pub\nKopieer deze key publieke key (.pub).\nGa op GitHub naar de repo die je wilt clonen.\nOnder het tab settings, staat in de linker balk ‘deploy keys’\nVul daar je key in die je hebt aangemaakt.\nJe hebt nu alleen toegang tot de ene repository. In de meeste gevallen wil je read + write access, maar dit hant af van je proces."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "How to Git",
