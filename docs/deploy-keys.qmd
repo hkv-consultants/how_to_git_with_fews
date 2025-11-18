@@ -1,0 +1,21 @@
+# Deploy keys
+
+Om veilig een repository op een machine neer te zetten zonder meteen volledige toegang te geven tot al je GitHub projecten kan je gebruik maken van een deploy key.
+
+## Op de machine
+
+```bash
+ssh-keygen -t ed25519
+```
+
+Deze maakt standaard een key aan in het bestand: `C:\Users\{user}\.ssh\id_ed25519.pub`
+
+Kopieer deze key publieke key (.pub). 
+
+Ga op GitHub naar de repo die je wilt clonen.
+
+Onder het tab settings, staat in de linker balk 'deploy keys'
+
+Vul daar je key in die je hebt aangemaakt.
+
+Je hebt nu alleen toegang tot de ene repository. In de meeste gevallen wil je read + write access, maar dit hant af van je proces. 

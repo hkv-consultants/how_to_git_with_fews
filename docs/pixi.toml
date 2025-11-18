@@ -1,4 +1,4 @@
-[project]
+[workspace]
 name = "how_to_git_with_fews"
 version = "0.0.1"
 description = "How to git with FEWS"
